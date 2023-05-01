@@ -55,9 +55,6 @@ class Solution {
             if(distance[i] <= K) answer++;
         }
 
-
-
-
         return answer;
     }
 

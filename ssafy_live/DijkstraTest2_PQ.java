@@ -100,6 +100,7 @@ public class DijkstraTest2_PQ {
 				}
 			}
 		}
+
 		System.out.println(distance[end]);
 	}
 
