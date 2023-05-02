@@ -58,8 +58,6 @@ class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-//        int[] arrayA = {10,17};
-//        int[] arrayB = {5,17};
         int[] arrayA = {10,20};
         int[] arrayB = {5,17};
         int answer = solution.solution(arrayA, arrayB);
