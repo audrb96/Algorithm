@@ -42,12 +42,8 @@ class Solution {
                     queue.add(new int[]{nr,nc});
                 }
             }
-
         }
-
         return answer;
-
-
     }
 
     private char[][] setMatrix(String[] place) {
