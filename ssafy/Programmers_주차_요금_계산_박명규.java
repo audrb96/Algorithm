@@ -3,19 +3,19 @@ package ssafy;
 import java.util.*;
 
 public class Programmers_주차_요금_계산_박명규 {
-    public static class record implements Comparable<record>{
+    public static class Record implements Comparable<Record>{
         int time;
         int carNum;
         int inOut;
 
-        public record(int time, int carNum, int inOut) {
+        public Record(int time, int carNum, int inOut) {
             this.time = time;
             this.carNum = carNum;
             this.inOut = inOut;
         }
 
         @Override
-        public int compareTo(record o) {
+        public int compareTo(Record o) {
                 return this.carNum - o.carNum;
 
         }
@@ -24,14 +24,14 @@ public class Programmers_주차_요금_계산_박명규 {
     public static int[] solution(int[] fees, String[] records) {
         Map<Integer,Integer> ansMap = new HashMap<>();
 
-        List<record> recordList = new ArrayList<>();
+        List<Record> recordList = new ArrayList<>();
         for(int i =0;i<records.length;i++){
             String[] temp = records[i].split(" ");
             int hour = Integer.parseInt(temp[0].split(":")[0]);
             int minute = Integer.parseInt(temp[0].split(":")[1]);
             int carNum = Integer.parseInt(temp[1]);
             int inOut = temp[2].equals("IN") ? 1: 0;
-            recordList.add(new record(hour*60+minute, carNum,inOut));
+            recordList.add(new Record(hour*60+minute, carNum,inOut));
         }
         Collections.sort(recordList);
 
@@ -40,7 +40,7 @@ public class Programmers_주차_요금_계산_박명규 {
         int beforeCarNum = -1;
 
         for(int i =0;i<recordList.size();i++){
-            record temp = recordList.get(i);
+            Record temp = recordList.get(i);
             if(temp.inOut ==1 && beforeInOut ==1 && i==(recordList.size()-1)){
                 if(ansMap.containsKey(temp.carNum)){
                     int ti = ansMap.remove(temp.carNum);
